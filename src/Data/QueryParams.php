@@ -19,6 +19,8 @@ final readonly class QueryParams
         public ?int $fregto = null,
         public ?int $kmfrom = null,
         public ?int $kmto = null,
+        public ?int $ccfrom = null,
+        public ?int $ccto = null,
         public ?int $powerfrom = null,
         public ?int $powerto = null,
         public PowerType $powertype = PowerType::Kw,
@@ -83,6 +85,14 @@ final readonly class QueryParams
 
         if ($this->kmto !== null) {
             $params['kmto'] = $this->kmto;
+        }
+
+        if ($this->ccfrom !== null) {
+            $params['ccfrom'] = $this->ccfrom;
+        }
+
+        if ($this->ccto !== null) {
+            $params['ccto'] = $this->ccto;
         }
 
         if ($this->powerfrom !== null) {

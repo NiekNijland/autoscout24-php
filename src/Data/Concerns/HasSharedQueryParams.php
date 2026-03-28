@@ -52,6 +52,8 @@ trait HasSharedQueryParams
             fregto: $shared->yearTo,
             kmfrom: $shared->mileageFrom,
             kmto: $shared->mileageTo,
+            ccfrom: $shared->ccFrom,
+            ccto: $shared->ccTo,
             powerfrom: $shared->powerFrom,
             powerto: $shared->powerTo,
             powertype: $shared->powerType ?? PowerType::Kw,
@@ -66,6 +68,7 @@ trait HasSharedQueryParams
             page: $page,
             offer: $shared->onlineSince,
             excludeDamaged: $shared->excludeDamaged,
+            pricetype: $shared->priceType,
         );
     }
 

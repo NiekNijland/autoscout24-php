@@ -188,6 +188,56 @@ class SearchCriteriaTest extends TestCase
         $this->assertSame(3, $paginated->page());
     }
 
+    public function test_motorcycle_criteria_with_cc_range(): void
+    {
+        $criteria = MotorcycleSearchCriteria::fromFilters(
+            shared: new SharedSearchFilters(ccFrom: 250, ccTo: 1000),
+        );
+
+        $params = $criteria->toQueryParams()->toArray();
+        $this->assertSame(250, $params['ccfrom']);
+        $this->assertSame(1000, $params['ccto']);
+    }
+
+    public function test_motorcycle_criteria_with_fuel_types(): void
+    {
+        $criteria = MotorcycleSearchCriteria::fromFilters(
+            filters: new VehicleSearchFilters(
+                fuelTypes: [new FilterOption('E', 'Elektro')],
+            ),
+        );
+
+        $params = $criteria->toQueryParams()->toArray();
+        $this->assertSame('E', $params['fuel']);
+    }
+
+    public function test_motorcycle_criteria_with_price_type(): void
+    {
+        $criteria = MotorcycleSearchCriteria::fromFilters(
+            shared: new SharedSearchFilters(priceType: 'N'),
+        );
+
+        $params = $criteria->toQueryParams()->toArray();
+        $this->assertSame('N', $params['pricetype']);
+    }
+
+    public function test_motorcycle_criteria_cc_omitted_when_null(): void
+    {
+        $criteria = new MotorcycleSearchCriteria;
+        $params = $criteria->toQueryParams()->toArray();
+
+        $this->assertArrayNotHasKey('ccfrom', $params);
+        $this->assertArrayNotHasKey('ccto', $params);
+    }
+
+    public function test_motorcycle_criteria_pricetype_omitted_when_null(): void
+    {
+        $criteria = new MotorcycleSearchCriteria;
+        $params = $criteria->toQueryParams()->toArray();
+
+        $this->assertArrayNotHasKey('pricetype', $params);
+    }
+
     // --- Sort Order Enum ---
 
     public function test_sort_order_fields(): void

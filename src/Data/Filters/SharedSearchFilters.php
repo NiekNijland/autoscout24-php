@@ -28,6 +28,8 @@ final readonly class SharedSearchFilters
         public ?int $yearTo = null,
         public ?int $mileageFrom = null,
         public ?int $mileageTo = null,
+        public ?int $ccFrom = null,
+        public ?int $ccTo = null,
         public ?int $powerFrom = null,
         public ?int $powerTo = null,
         public ?PowerType $powerType = null,
@@ -36,5 +38,6 @@ final readonly class SharedSearchFilters
         public ?int $radius = null,
         public ?string $onlineSince = null,
         public bool $excludeDamaged = false,
+        public ?string $priceType = null,
     ) {}
 }
