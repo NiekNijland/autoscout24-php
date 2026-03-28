@@ -13,3 +13,7 @@
 /art export-ignore
 /docs export-ignore
 /UPGRADING.md export-ignore
+/BLUEPRINT.md export-ignore
+/PLAN.md export-ignore
+/curl.txt export-ignore
+/phpstan.neon export-ignore

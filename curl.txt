@@ -1,0 +1,7 @@
+curl 'https://www.autoscout24.nl/lst-moto/suzuki/dr-z4sm?sort=standard&desc=0&ustate=N%2CU&atype=B&cy=NL&damaged_listing=exclude&source=homepage_search-mask' \
+  -H 'Referer: https://www.autoscout24.nl/motoren' \
+  -H 'Upgrade-Insecure-Requests: 1' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36' \
+  -H 'sec-ch-ua: "Not-A.Brand";v="24", "Chromium";v="146"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"'

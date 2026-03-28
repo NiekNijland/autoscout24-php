@@ -1,45 +1,57 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "nieknijland/autoscout24",
+    "description": "PHP client for AutoScout24.nl — wraps internal Next.js data endpoints into a typed API",
     "keywords": [
-        ":vendor_name",
-        ":package_slug"
+        "autoscout24",
+        "cars",
+        "motorcycles",
+        "scraper",
+        "api-client"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/nieknijland/autoscout24",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "NiekNijland",
+            "email": "niek@nijland.cc",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.4"
+        "php": "^8.4",
+        "guzzlehttp/guzzle": "^7.0",
+        "psr/simple-cache": "^3.0"
     },
     "require-dev": {
-        :require_dev_testing,
-        :require_dev_codestyle,
+        "laravel/pint": "^1.0",
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^10.3.2",
+        "rector/rector": "^2.0",
         "spatie/ray": "^1.28"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "NiekNijland\\AutoScout24\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "NiekNijland\\AutoScout24\\Tests\\": "tests"
         }
     },
     "scripts": {
-        :scripts_testing,
-        :scripts_codestyle
+        "test": "vendor/bin/phpunit --testsuite Unit --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --testsuite Unit --coverage",
+        "test-integration": "vendor/bin/phpunit --testsuite Integration --no-coverage",
+        "test-all": "vendor/bin/phpunit --no-coverage",
+        "format": "vendor/bin/pint",
+        "analyse": "vendor/bin/phpstan analyse",
+        "rector": "vendor/bin/rector process",
+        "codestyle": ["@rector", "@format", "@analyse"]
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            :plugins_testing,
             "phpstan/extension-installer": true
         }
     },
