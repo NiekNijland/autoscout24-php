@@ -52,8 +52,8 @@ class DetailVehicleFactory
             rawPowerInHp: isset($data['rawPowerInHp']) ? (int) $data['rawPowerInHp'] : null,
             powerInKw: $data['powerInKw'] ?? null,
             powerInHp: $data['powerInHp'] ?? null,
-            fuelCategory: $data['fuelCategory'] ?? new VehicleFuelInfo('B', 'Benzine'),
-            primaryFuel: $data['primaryFuel'] ?? new VehicleFuelInfo('B', 'Benzine'),
+            fuelCategory: array_key_exists('fuelCategory', $data) ? $data['fuelCategory'] : new VehicleFuelInfo('B', 'Benzine'),
+            primaryFuel: array_key_exists('primaryFuel', $data) ? $data['primaryFuel'] : new VehicleFuelInfo('B', 'Benzine'),
         );
     }
 }
