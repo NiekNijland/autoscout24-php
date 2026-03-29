@@ -11,7 +11,7 @@ A PHP client for AutoScout24.nl that wraps internal Next.js data endpoints into 
 You can install the package via composer:
 
 ```bash
-composer require nieknijland/autoscout24
+composer require nieknijland/autoscout24-php
 ```
 
 ## Usage
