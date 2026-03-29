@@ -20,7 +20,7 @@
     ],
     "require": {
         "php": "^8.4",
-        "guzzlehttp/guzzle": "^7.0",
+        "guzzlehttp/guzzle": "^7.10",
         "psr/simple-cache": "^3.0"
     },
     "require-dev": {
