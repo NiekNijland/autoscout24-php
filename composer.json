@@ -1,8 +1,9 @@
 {
-    "name": "nieknijland/autoscout24",
+    "name": "nieknijland/autoscout24-php",
     "description": "PHP client for AutoScout24.nl — wraps internal Next.js data endpoints into a typed API",
     "keywords": [
         "autoscout24",
+        "php",
         "cars",
         "motorcycles",
         "scraper",
