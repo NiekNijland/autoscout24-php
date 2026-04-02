@@ -2,6 +2,10 @@
 
 All notable changes to `AutoScout24` will be documented in this file.
 
+## v0.2.2 - 2026-04-02
+
+Fix vatRate hydration when AutoScout24 returns it as an integer by normalizing scalar values to strings in DetailPriceInfo::fromArray().
+
 ## v0.2.1 - 2026-04-02
 
 Fix vatRate hydration when AutoScout24 returns it as an integer by normalizing scalar values to strings in DetailPriceInfo::fromArray().
