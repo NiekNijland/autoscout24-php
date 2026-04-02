@@ -22,6 +22,8 @@ readonly class DetailPriceInfo
      */
     public static function fromArray(array $data): self
     {
+        $vatRate = $data['vatRate'] ?? null;
+
         return new self(
             price: (string) ($data['price'] ?? ''),
             priceRaw: (int) ($data['priceRaw'] ?? 0),
@@ -30,7 +32,7 @@ readonly class DetailPriceInfo
             onRequestOnly: (bool) ($data['onRequestOnly'] ?? false),
             netPrice: $data['netPrice'] ?? null,
             netPriceRaw: isset($data['netPriceRaw']) ? (int) $data['netPriceRaw'] : null,
-            vatRate: $data['vatRate'] ?? null,
+            vatRate: is_scalar($vatRate) ? (string) $vatRate : null,
         );
     }
 
